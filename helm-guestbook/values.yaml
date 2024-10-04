@@ -12,8 +12,13 @@ image:
 containerPort: 80
 
 service:
-  type: ClusterIP
+  type: LoadBalancer  # Changé de ClusterIP à LoadBalancer
   port: 80
+  targetPort: 80  # Ajouté pour spécifier le port du conteneur
+  annotations:  # Ajouté des annotations pour le LoadBalancer Hetzner
+    load-balancer.hetzner.cloud/location: "nbg1"  # Remplacez par votre emplacement Hetzner
+    load-balancer.hetzner.cloud/use-private-ip: "true"
+    load-balancer.hetzner.cloud/disable-private-ingress: "true"
 
 ingress:
   enabled: false
