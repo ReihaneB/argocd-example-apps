@@ -1,0 +1,5 @@
+apiVersion: v2
+name: helm-aaaa
+description: A Helm chart for testing external IP with nginx on LoadBalancer
+version: 0.1.0
+appVersion: "1.0"
