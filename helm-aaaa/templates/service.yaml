@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "helm-aaaa.fullname" . }}
+  name: test-app-service # Remplace l'appel à include par un nom fixe pour tester
 spec:
   type: LoadBalancer
   selector:
-    app: {{ include "helm-aaaa.name" . }}
+    app: test-app
   ports:
   - port: 80
     targetPort: 80
